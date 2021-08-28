@@ -1,0 +1,449 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+body{
+	background: #111;
+}
+
+header{
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	position: fixed;
+	background: #000;
+	box-shadow: 0px -115px 50px -123px #0042ff inset;
+	border-bottom: 2px solid #0042ff;
+	overflow: hidden;
+	z-index: 100;
+}
+
+header .header-content{
+	width: 100%;
+	padding: 0 100px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-content .logo{
+	position: relative;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	height: 75px;
+}
+
+.logo h1{
+	font-size: 35px;
+}
+
+.logo b{
+	color: #0042ff;
+}
+
+.logo img{
+	position: absolute;
+	top: 50px;
+	left: -70px;
+	width: 80px;
+	cursor: pointer;
+	transition: transform 200ms;
+}
+
+.logo img:hover{
+	transform: translateY(-48px);
+}
+
+/*btn-menu*/
+
+.ctn-menu{
+	display: none;
+	position: fixed;
+	right: 10px;
+	padding: 10px 0;
+}
+
+.ctn-menu .menu-btn{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	transition: all .5s ease-in-out;
+	border-radius: 5px;
+}
+
+.menu-btn__burger{
+	width: 50px;
+	height: 6px;
+	background: #0042ff;
+	border-radius: 5px;;
+	transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after{
+	content: '';
+	position: absolute;
+	width: 50px;
+	height: 6px;
+	background: #0042ff;
+	border-radius: 5px;
+	transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before{
+	transform: translateY(-16px);
+}
+
+.menu-btn__burger::after{
+	transform: translateY(16px);
+}
+
+/*animacion*/
+
+.menu-btn.open .menu-btn__burger{
+	transform: translateX(-50px);
+	background: transparent;
+	box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before{
+	transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after{
+	transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.menu{
+	height: 60px;
+}
+
+.header-content nav{
+	height: 80px;
+}
+
+.header-content nav ul{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-content nav ul li{
+	height: 100%;
+	margin: 0 20px;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.header-content nav ul li a{
+	color: #fff;
+	transition: color 300ms;
+}
+
+.header-content nav ul li a:hover{
+	color: #0042ff;
+}
+
+.header-content nav ul li a:before{
+	content: '';
+	width: 100%;
+	border-bottom: 8px solid #0042ff;
+	position: absolute;
+	bottom: 0;
+	left: 550px;
+	transition: 0.7s;
+}
+
+.header-content nav ul li a:hover:before{
+	left: 0;
+}
+
+.ctn-cover{
+	top: 80px;
+	width: 100%;
+	height: 500px;
+	position: relative;
+	background-image: url(../imgs/banner-Recuperado.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	animation: flash 2.5s infinite;
+}
+
+@keyframes flash{
+	0%{
+		filter: brightness(2);
+	}
+
+	10%{
+		filter: brightness(1);
+	}
+
+	20%{
+		filter: brightness(1);
+	}
+
+	30%{
+		filter: brightness(1);
+	}
+
+	40%{
+		filter: brightness(1);
+	}
+
+	50%{
+		filter: brightness(1);
+	}
+
+	60%{
+		filter: brightness(1);
+	}
+
+	70%{
+		filter: brightness(1);
+	}
+
+	80%{
+		filter: brightness(1);
+	}
+
+	90%{
+		filter: brightness(2);
+	}
+
+	100%{
+		filter: brightness(1);
+	}
+}
+
+.ctn-cover:before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(30, 30, 255, 0.0);
+}
+
+/*main*/
+
+.ctn-title{
+	position: relative;
+	color: #fff;
+	top: 100px;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #222;
+}
+
+.ctn-posts{
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(4, 305px);
+	gap: 40px 20px;
+	padding: 20px;
+	margin: 0 auto;
+	top: 100px;
+	width: 100%;
+}
+
+.ctn-posts .post{
+	box-shadow: 0px 20px 25px -8px rgba(0,66,255,0.75);
+	border-radius: 10px;
+	position: relative;
+	color: #fff;
+	height: 380px;
+	overflow: hidden;
+	background: #222;
+}
+
+.ctn-posts .post .ctn-img{
+	width: 100%;
+	height: 175px;
+	top: 0;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.ctn-img img{
+	width: 100%;
+	transition: width 2s;
+}
+
+.ctn-img:hover img{
+	width: 400px;
+}
+
+.ctn-img:hover #bg{
+	background: none;
+}
+
+.ctn-img:hover #play2{
+	font-size: 50px;
+	opacity: 1;
+}
+
+.ctn-img:hover .far{
+	font-size: 100px;
+	opacity: 0;
+}
+
+.post .ctn-img .fas{
+	opacity: 0;
+}
+
+#play2{
+	font-size: 30px;
+}
+
+.post .ctn-img i{
+	position: absolute;
+	color: #0062fd;
+	font-size: 75px;
+	z-index: 10;
+	transition: all 1s;
+}
+
+.post .ctn-img .bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: all 1s;
+}
+
+.post .details{
+	position: absolute;
+	cursor: default;
+	padding: 0 10px;
+	width: 100%;
+	height: 50%;
+	bottom: 0px;
+}
+
+.post .details data{
+	margin-top: 10px;
+	display: block;
+}
+
+.post .details span{
+	background: #121212;
+	display: inline-block;
+	margin-top: 5px;
+	padding: 3px 15px;
+}
+
+.post input[type="button"]{
+	margin: 15px 10px;
+	padding: 10px 60px;
+	font-size: 18px;
+	position: absolute;
+	cursor: pointer;
+	border: none;
+	bottom: 0;
+	color: #fff;
+	border-radius: 5px;
+	background: #0042ff;
+	transition: background 200ms;
+}
+
+.post input[type="button"]:hover{
+	background: #0062fd;
+}
+
+.ctn-footer{
+	width: 100%;
+	padding: 40px 0;
+	background: #222;
+	margin-top: 200px;
+}
+
+.ctn-footer footer{
+	max-width: 1200;
+	margin: auto;
+}
+
+.ctn-footer footer .footer-logo{
+	text-align: center;
+}
+
+.ctn-footer footer img{
+	max-width: 100px;
+}
+
+.ctn-footer footer .redes-footer{
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.icon-redes-footer{
+	height: 50px;
+	width: 50px;
+	margin: 20px;
+	font-size: 20px;
+	background: #111;
+	color: #a2a2a2;
+	border-radius: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	transition: 250ms;
+}
+
+footer .redes-footer .fa-twitch:hover{
+	background: #6441a5;
+	color: #fff;
+}
+
+footer .redes-footer .fa-youtube:hover{
+	background: red;
+	color: #fff;
+}
+
+footer .redes-footer .fa-instagram:hover{
+	background: linear-gradient(to top right, #FCDE30,#E9712A,#D2313B,#AE4198,#5443AB);
+	color: #fff;
+}
+
+footer a{
+	cursor: default;
+}
+
+footer .fab{
+	cursor: pointer;
+}
+
+.ctn-footer footer hr{
+	margin-top: 20px;
+	border: none;
+	height: 3px;
+	background: #0042ff;
+}
+
+.ctn-footer h4{
+	text-align: center;
+	margin-top: 20px;
+	align-items: center;
+	color: #a2a2a2;
+	font-weight: 500px;
+}
